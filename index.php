@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="https://demos.creative-tim.com/material-dashboard-pro/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="https://demos.creative-tim.com/material-dashboard-pro/assets/img/favicon.png">
   <title>
-  IAIICT E-Shelves Version 4
+  IAIICT E-Shelves Version 6
   </title>
   <!-- Extra details for Live View on GitHub Pages -->
   <!-- Canonical SEO -->
