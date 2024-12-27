@@ -123,9 +123,10 @@ a.custom-menu-list span.icon{
 		</div>
 		<hr>
 		<div class="row">
-			<div class="card col-md-12">
-				<div class="card-body">
-					<table width="100%">
+		<div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+				
 						<tr>
 							<th width="40%" class="">Filename</th>
 							<th width="20%" class="">Date</th>

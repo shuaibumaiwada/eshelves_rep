@@ -980,10 +980,9 @@ if(!isset($_SESSION["admin_user"])){
                     </a>
                 </div>
                 <nav aria-label="breadcrumb" class="ps-2">
+             
                     <ol class="breadcrumb bg-transparent mb-0 p-0">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;"></a></li>
-                        <li class="breadcrumb-item text-sm text-dark active font-weight-bold" aria-current="page"> <a
-                                class="navbar-brand waves-effect" href="#">
+                        <li><a class="" href="#">
                                 <img src="js/img/Files_Download.png" width="33px" height="33px">
                                 <font color="#F0B56F">F</font>ile <font color="#F0B56F">M</font>anagement <font
                                     color="#F0B56F">S</font>ystem
@@ -991,12 +990,16 @@ if(!isset($_SESSION["admin_user"])){
                                     <font color="#F0B56F">IAIICT</font>
                                     Ahmadu Bello University, Zaria
                                 </strong>
-                            </a></li>
+                            </a>
+                        </li>
                     </ol>
+                  
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                
                         <div class="input-group input-group-outline">
+                        
                             <label class="form-label">Search here</label>
                             <input type="text" class="form-control" onfocus="focused(this)"
                                 onfocusout="defocused(this)">
