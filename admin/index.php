@@ -4,8 +4,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://demos.sdu-tim.zo/material-dashboard-pro/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="https://demos.sdu-tim.zo/material-dashboard-pro/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="">
+  <link rel="icon" type="image/png" href="">
   <title>
     IAIICT E-Shelves Version 1 
   </title>

@@ -19,9 +19,9 @@ if(!isset($_SESSION["admin_user"])){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="apple-touch-icon" sizes="76x76"
-        href="https://demos.creative-tim.com/material-dashboard-pro/assets/img/apple-icon.png">
+        href="">
     <link rel="icon" type="image/png"
-        href="https://demos.creative-tim.com/material-dashboard-pro/assets/img/favicon.png">
+        href="">
     <title>
         ABU File Management System version 2
     </title>
@@ -1656,10 +1656,10 @@ if(!isset($_SESSION["admin_user"])){
 
 
 
-    function closeOfferBar() {
-        document.getElementById("ofBar").setAttribute("style", "display:none");
-        setCookie("view_offer_bar", "true", 1)
-    }
+    //function closeOfferBar() {
+       // document.getElementById("ofBar").setAttribute("style", "display:none");
+        //setCookie("view_offer_bar", "true", 1)
+   // }
     var value = readCookie("view_offer_bar");
     value == null && (createOfferBar(), document.getElementById("close-bar").addEventListener("click", closeOfferBar));
     </script>
