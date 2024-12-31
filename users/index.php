@@ -32,18 +32,18 @@
   <meta property="og:description" content="Material Dashboard PRO is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful, clean and organized. If you are looking for a tool to manage dates about your business, this dashboard is the thing for you.">
   <meta property="og:site_name" content="sdu Tim">
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="./admindash_sales/css">
+  <link rel="stylesheet" type="text/css" href="../admin/admindash_sales/css">
   <!-- Nucleo Icons -->
-  <link href="./admindash_sales/nucleo-icons.css" rel="stylesheet">
-  <link href="./admindash_sales/nucleo-svg.css" rel="stylesheet">
+  <link href="../admin/admindash_sales/nucleo-icons.css" rel="stylesheet">
+  <link href="../admin/admindash_sales/nucleo-svg.css" rel="stylesheet">
   <!-- Font Awesome Icons -->
 
 
   <link rel="stylesheet" href="./admindash_sales/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <!-- Material Icons -->
-  <link rel="stylesheet" href="./admindash_sales/css2">
+  <link rel="stylesheet" href="../admin/admindash_sales/css2">
   <!-- CSS Files -->
-  <link id="pagestyle" href="./admindash_sales/material-dashboard.min.css" rel="stylesheet">
+  <link id="pagestyle" href="../admin/admindash_sales/material-dashboard.min.css" rel="stylesheet">
   <!-- Anti-flicker snippet (recommended)  -->
   <style>
     .async-hide {
@@ -146,8 +146,8 @@
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
               Important Notice
-              <img src="./admindash_sales/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
-              <img src="./admindash_sales/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
+              <img src="../admin/admindash_sales/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
+              <img src="../admin/admindash_sales/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
             </a>
             <div class="dropdown-menu dropdown-menu-animation dropdown-xl p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
            
@@ -215,8 +215,8 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuAccount" data-bs-toggle="dropdown" aria-expanded="false">
               Authentication
-              <img src="./admindash_sales/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
-              <img src="./admindash_sales/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
+              <img src="../admin/admindash_sales/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
+              <img src="../admin/admindash_sales/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
             </a>
             <div class="dropdown-menu dropdown-menu-animation dropdown-md border-radius-xl p-3 mt-0 mt-lg-3" aria-labelledby="dropdownMenuAccount">
               <div class="d-none d-lg-flex">
@@ -226,7 +226,7 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
                       <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center mb-1 text-dark" id="dropdownSignIn">
                         <i class="material-symbols-rounded opacity-6 me-2 text-md">login</i>
                         <span>Sign In</span>
-                        <img src="./admindash_sales/down-arrow.svg" alt="down-arrow" class="arrow ms-auto">
+                        <img src="../admin/admindash_sales/down-arrow.svg" alt="down-arrow" class="arrow ms-auto">
                       </a>
                    
                     </li>
@@ -234,7 +234,7 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
                       <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center mb-1 text-dark" id="dropdownSignUp">
                         <i class="material-symbols-rounded opacity-6 me-2 text-md">assignment</i>
                         <span>Sign Up</span>
-                        <img src="./admindash_sales/down-arrow.svg" alt="down-arrow" class="arrow ms-auto">
+                        <img src="../admin/admindash_sales/down-arrow.svg" alt="down-arrow" class="arrow ms-auto">
                       </a>
                  
                     </li>
@@ -242,7 +242,7 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
                       <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center mb-1 text-dark" id="dropdownPasswordReset">
                         <i class="material-symbols-rounded opacity-6 me-2 text-md">restart_alt</i>
                         <span>Reset Password</span>
-                        <img src="./admindash_sales/down-arrow.svg" alt="down-arrow" class="arrow ms-auto">
+                        <img src="../admin/admindash_sales/down-arrow.svg" alt="down-arrow" class="arrow ms-auto">
                       </a>
                     
                     </li>
@@ -286,8 +286,8 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
               Applications
-              <img src="./admindash_sales/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
-              <img src="./admindash_sales/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
+              <img src="../admin/admindash_sales/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
+              <img src="../admin/admindash_sales/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
             </a>
             <div class="dropdown-menu dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
               <div class="d-none d-lg-block">
@@ -388,42 +388,42 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
             <div class="card z-index-0 fadeIn3 fadeInBottom">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-                  <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in IM</h4>
+                  <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">User Sign in </h4>
                   <div class="row mt-3">
                     <div class="col-2 text-center ms-auto">
                       <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-folder text-white text-lg"></i>
+                        <i class="fa fa-file text-white text-lg"></i>
                       </a>
                     </div>
                     <div class="col-2 text-center px-1">
                       <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-github text-white text-lg"></i>
+                        <i class="fa fa-file text-white text-lg"></i>
                       </a>
                     </div>
                     <div class="col-2 text-center me-auto">
                       <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-google text-white text-lg"></i>
+                        <i class="fa fa-file text-white text-lg"></i>
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start" action="admin_login.php" method="POST">
+                <form role="form" class="text-start" action="../userlogin/login.php" method="POST">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" id="materialFormCardEmailEx" name="admin_user">
+                    <input type="email" class="form-control" id="materialFormCardEmailEx" name="email_address">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" id="materialFormCardPasswordEx" name="admin_password" >
+                    <input type="password" class="form-control" id="materialFormCardPasswordEx" name="user_password" >
                   </div>
                   <div class="form-check form-switch d-flex align-items-center mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button class="btn bg-gradient-dark w-100 my-4 mb-2" name = "adminlog" id="login" type="submit">Sign In</button>
+                    <button class="btn bg-gradient-dark w-100 my-4 mb-2" name = "logIn" id="login" type="submit">Sign In</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?
@@ -474,7 +474,46 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
   <script src="./admindash_sales/dragula.min.js"></script>
   
 <style>
-    #count-down {
+  #ddofBar {
+    background: #fff;
+    z-index: 999999999;
+    font-size: 16px;
+    color: #333;
+    padding: 16px 40px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px;
+    width: 80%;
+    border-radius: 8px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3), 0 -6px 16px -6px rgba(0,0,0,0.025);
+    visibility:hidden;
+  }
+
+  #ofBar-logo img {
+    height: 50px;
+  }
+
+  #ofBar-content {
+    display: inline;
+    padding: 0 15px;
+  }
+
+  #ofBar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  #ofBar b {
+    font-size: 15px !important;
+  }
+  #count-down {
     display: initial;
     padding-left: 10px;
     font-weight: bold;
@@ -511,7 +550,10 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
     opacity: 1;
   }
 
-
+  #btn-bar span, #ofBar-content span {
+    color: red;
+    font-weight: 700;
+  }
 
   #oldPriceBar {
     text-decoration: line-through;
@@ -562,10 +604,30 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
       display: block;
       margin-top: 15px;
     }
+
+    #ofBar {
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    #ofBar-content {
+      margin: 15px 0;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    #ofBar-right {
+      justify-content: flex-end;
+    }
   }
 </style>
 
-
+<script type="text/javascript" id="" charset="">function setCookie(a,d,c){var b=new Date;b.setTime(b.getTime()+c*24*60*60*1E3);c="expires\x3d"+b.toUTCString();document.cookie=a+"\x3d"+d+";"+c+";path\x3d/"}
+function readDomain(){domain=window.location.hostname;if(domain=="hrm.newflex.co.kr"){console.log("Remove the script");var a=document.createElement("div");a.setAttribute("id","pls-contact-me-on-email");a.innerHTML="\x3ch1\x3ePlease Remove the Stolen Google Analytics from \x3ca href\x3d'https://www.sdu-tim.zo/?ref\x3dstolen-website' target\x3d'_blank' '\x3esdu-tim.zo\x3c/a\x3e Please send an email to beni@sdu-tim.zo to help you remove our scripts.\x3c/h1\x3e";document.body.insertBefore(a,
+document.body.firstChild)}}function readCookie(a){a+="\x3d";for(var d=document.cookie.split(";"),c=0;c<d.length;c++){for(var b=d[c];b.charAt(0)==" ";)b=b.substring(1,b.length);if(b.indexOf(a)==0)return b.substring(a.length,b.length)}return null}
+function createOfferBar(){readDomain();var a=document.createElement("div");a.setAttribute("id","ofBar");</script>
+	<script type="text/javascript" id="" charset="">!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.zo/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CC6UAQBC77U7GVKHLC4G");a.page()}(window,document,"ttq");</script>
 	<script src="./admindash_sales/jkanban.min.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -580,10 +642,10 @@ All Foreign Returning and New Students, Diploma, Undergraduate and Post graduate
   <script async="" defer="" src="./admindash_sales/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="./admindash_sales/material-dashboard.min.js"></script>
+<script defer="" src="./admindash_sales/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8f46709a897c7795&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;1b7cbb72744b40c580f8633c6b62637e&quot;}" crossorigin="anonymous"></script>
 
 
-
-<style>
+<iframe allow="join-ad-interest-group" data-tagging-id="G-LMRL06STSS" data-load-time="1734712512492" height="0" width="0" src="./admindash_sales/rul.html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="G-ZF0KSVVM14" data-load-time="1734712512594" height="0" width="0" src="./admindash_sales/rul(1).html" style="display: none; visibility: hidden;"></iframe><div id="loom-companion-mv3" ext-id="liecbddmkiiihnedobmlmillhodjkdmb"><section id="shadow-host-companion"><template shadowrootmode="open"><div id="inner-shadow-companion"><div class="css-0" id="tooltip-mount-layer-companion"></div><style data-emotion="companion-global"></style><style data-emotion="companion" data-s=""></style><style>
             
     #inner-shadow-companion {
       font-size: 100%;

@@ -57,6 +57,14 @@ a.custom-menu-list span.icon{
 }
 
 </style>
+<style>
+        .truncate-text {
+            width: 2%; /* Set the desired width */
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflowed text */
+            text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
+        }
+    </style>
 <div class="container-fluid">
 	<div class="col-lg-12">
 		<div class="row">
@@ -163,11 +171,12 @@ a.custom-menu-list span.icon{
 
 							</td>
 							<td><i class="to_file"><?php echo date('Y/m/d h:i A',strtotime($row['date_updated'])) ?></i></td>
-							<td><i class="to_file"><?php echo $row['description'] ?></i></td>
+							<td class='text-cell'><i class="to_file"><?php echo $row['description'] ?></i></td>
 							
-							<td><a href="../private_user/downloads.php?file_id=<?php echo $row['id']; ?>"><button><i class="fa fa-download"></i></button></a>
+							<td><a href="../private_user/downloads.php?file_id=<?php echo $row['id']; ?>"><button><i class="fa fa-download"></i></button></a>|
 							<!-- <a href="../private_user/index.php?fl=../fms_2/assets/uploads/<?php //echo $row['file_path'] ?>&fln=../fms_2/assets/uploads/<?php //echo $row['file_path'] ?>" target='_blank'><button><i class="fa fa-file"></i></button></a>| -->
 							<a href="../fms_2/assets/uploads/<?php echo $row['file_path'] ?>" target='_blank'><button><i class="fa fa-file"></i></button></a>|
+							<a href='../users/users_description.php?userfileid=<?php echo $row['id'] ?>' name='openSideWindow' class="openSideWindowFile"><button><i class="fa fa-comments"></i></button></a>
 
 							<!-- <input type='checkbox'  value="<?php //echo $myrowid ?>" name="viewers[]" /><a class="fa fa-eye"></a> -->
 							</td>
@@ -203,7 +212,16 @@ a.custom-menu-list span.icon{
 	<a href="javascript:void(0)" class="custom-menu-list file-option download"><span><i class="fa fa-download"></i> </span>Download</a>
 	<a href="javascript:void(0)" class="custom-menu-list file-option delete"><span><i class="fa fa-trash"></i> </span>Delete</a>
 </div>
-
+<script>
+        // Limit text to 20 characters
+        document.querySelectorAll('.text-cell').forEach(cell => {
+            let text = cell.textContent;
+            if (text.length > 20) {
+                cell.textContent = text.substring(0, 20) + '...';
+            }
+        });
+    </script>
+	
 <script>
 	//Add file to Viewers Model
 	$('#Add_viewers_folder').click(function(){
@@ -380,3 +398,28 @@ a.custom-menu-list span.icon{
 	}
 
 </script>
+<script>
+  $('.openSideWindowFile').click(function(event) {
+  event.preventDefault(); // Prevent default behavior
+  //const linkText = $(this).text(); // Get text content
+  const hrefValue = $(this).attr('href'); // Get href attribute
+  //console.log(`HREF: ${hrefValue}`);
+    // Get the dimensions of the parent window
+    const parentWindowWidth = window.outerWidth;
+    const parentWindowHeight = window.outerHeight;
+    const parentWindowX = window.screenX; // X coordinate of the parent window
+    const parentWindowY = window.screenY; // Y coordinate of the parent window
+
+    // Set the size of the new window
+    const newWindowWidth = Math.floor(parentWindowWidth / 2); // Half the width of the parent
+    const newWindowHeight = parentWindowHeight;
+
+    // Open the new window on the right side of the parent window
+    window.open(
+      hrefValue, // URL to open
+      '_blank', // Target
+      `width=${newWindowWidth},height=${newWindowHeight},top=${parentWindowY},left=${parentWindowX + newWindowWidth}`
+    );
+  });
+
+</script>  

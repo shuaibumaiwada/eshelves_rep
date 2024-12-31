@@ -16,7 +16,7 @@ if(!isset($_SESSION["email_address"])){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>User Document Management System</title>
+  <title>IAIICT E-Shelves Version 1</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -37,10 +37,11 @@ if(!isset($_SESSION["email_address"])){
 <!-- <link rel="stylesheet" id="font-awesome-style-css" href="http://phpflow.com/code/css/bootstrap3.min.css" type="text/css" media="all">
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script> -->
     <script src="js/jquery-1.8.3.min.js"></script>
+   
     <link rel="stylesheet" type="text/css" href="media/css/dataTable.css" />
     <script src="media/js/jquery.dataTables.js" type="text/javascript"></script>
     <!-- <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script> -->
-    <script src="js/ckeditor.js"></script>
+  
 
     <!-- end table-->
     <script type="text/javascript" charset="utf-8">
@@ -50,9 +51,15 @@ if(!isset($_SESSION["email_address"])){
                 "iDisplayLength": 10
                 //"destroy":true;
             });
-  })
+  });
+
     </script>
     <style type="text/css">
+
+#editor1 {
+  white-space: pre-wrap; /* Ensures spaces are preserved */
+  overflow: auto;        /* Allows scrolling if necessary */
+}
       select[multiple], select[size] {
     height: auto;
     width: 20px;
@@ -120,7 +127,17 @@ a.custom-menu-list span.icon{
 		width:1em;
 		margin-right: 5px
 }
+        /* Reduce the height of table rows */
+        table tr {
+            height: 10px; /* Set the desired row height */
+        }
 
+        /* Adjust cell padding */
+        table td,
+        table th {
+            padding: 1px; /* Reduce padding to make rows shorter */
+            size:6;
+        }
 </style>
 
     <script src="jquery.min.js"></script>
@@ -158,8 +175,8 @@ a.custom-menu-list span.icon{
 ?>
   <!-- Start your project here-->
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark  fixed-top" style='background-color:#004;'>
-    <a class="navbar-brand" href="#"><img src="js/img/Files_Download.png" width="33px" height="33px"> <font color="#F0B56F">D</font>ocument <font color="#F0B56F">M</font>anagement <font color="#F0B56F">S</font>ystem</a>
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark  fixed-top" style='background-color:#001;'>
+    <a class="navbar-brand" href="#"><img src="js/img/Files_Download.png" width="33px" height="33px"> <font color="#F0B56F">IA</font>IICT <font color="#F0B56F">E-</font>Shelves <font color="#F0B56F">V</font>ersion 2</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -267,10 +284,10 @@ a.custom-menu-list span.icon{
      <div class="col-md-9 card mb-4 wow fadeIn">
 
 <hr>
-  <table id="dtable" class = "table table-striped" style="">
+  <table id="dtable" class = "table table-striped" style="font-size:9px;">
      <thead>
 
-    <th>Filename</th>
+    <th width='30%'>Filename</th>
     <th>Foldername</th>
     <!-- <th>Uploader</th>  
     <th>Status</th>  -->
@@ -297,17 +314,19 @@ a.custom-menu-list span.icon{
     //      $time =  $file['TIMERS'];
     //      $download =  $file['DOWNLOAD'];
     
-    $query = mysqli_query($conn,"SELECT users_allocation.id As id,userid,fileid,folderid,createdDate, file_type, file_path, files.name As filesname,folders.name As foldername  FROM users_allocation 
+    $query = mysqli_query($conn,"SELECT users_allocation.id As id,  files.id As fileid,userid,fileid,folderid,created_by,createdDate, file_type, file_path, files.name As filesname,folders.name As foldername  FROM users_allocation 
     INNER JOIN files ON files.id=fileid 
     INNER JOIN folders ON folders.id=folderid WHERE userid= '$id' group by filesname DESC") or die (mysqli_error($conn));
     while($file=mysqli_fetch_array($query)){
-       $id =  $file['id'];
+       $user_alocation_id =$file['id'];
+       $file_id =$file['fileid'];
+       $usertblid=$file['userid'];
        $name =  $file['filesname'];
        $nametype =  $file['file_type'];
        $size =  $file['foldername'];
        $filepath=$file['file_path'];
     //    $uploads =  $file['EMAIL'];
-    //     $status =  $file['ADMIN_STATUS'];
+       $adminid =  $file['created_by'];
        $time =  $file['createdDate'];
     //    $download =  $file['DOWNLOAD'];
     
@@ -344,9 +363,9 @@ a.custom-menu-list span.icon{
     
 
 		<td>
-		<a href='index.php?fl=../fms_2/assets/uploads/<?php echo $filepath; ?>&fln=../fms_2/assets/uploads/<?php echo $filepath; ?>' target='_blank'><button><i class="fa fa-file"></i></button></a>|
+		<a href='../fms_2/assets/uploads/<?php echo $filepath ?>' name='openSideWindow' class="openSideWindowFile"><button><i class="fa fa-file"></i></button></a>|
 
-        <a href='downloads.php?file_id=<?php echo $id; ?>'><button><i class="fa fa-download"></i></button></a><button class='desc' value='<?php echo $id; ?>, <?php echo $filepath ?>' data-id=''><i class="fa fa-comments" aria-hidden="true">jkmkl</i></button></td>
+        <a href='downloads.php?file_id=<?php echo $file_id; ?>'><button><i class="fa fa-download"></i></button></a><button class='desc' value='<?php echo $file_id; ?>, <?php echo $name ?>' data-id=''><i class="fa fa-comments" aria-hidden="true"></i></button></td>
     </tr>
    
 <?php 
@@ -356,21 +375,51 @@ a.custom-menu-list span.icon{
 
 </tbody>
 
-   </table><div class='descform' style='display:none;'>
-   <form action='' name='commentsForm' method='post'>
-   <table><br><br>
-    <tr class=""><td colspan='4'> <textarea name="content" id="editor" class='editor'>
+   </table><p></p>
+   <div class='descform' style='display:none;'>
 
-    </textarea><input type='text' id='myid'/><input type='submit' value='Save' id='save_comment' style='margin-left:700px;' class='btn btn-primary' /></div></td></tr>
+<!-- prevoius comments -->
+<div class="row">
+<div class="col-sm-12">
+ <div class="card" style="border-top: 4px solid #004;border-radius: 4px;">
+    <!-- Title -->
+    <strong class="card-title" style="background-color: #f4f4f4;">Previous Comments</strong><hr>
+<table style="margin-top:-45px;"><tr><td><span id='ninenan' > </span></td></tr></table>
+</div>
+</div>
+</div>
+<!-- end of prevoius comment -->
+
+
+   <form action='' name='commentsForm' method='post' id='commentsForm'>
+   <table><br><br>
+    <tr><td colspan='4'>
+      
+      <?php  include ('customtexteditor.html') 
+      ?>
+      <!-- hidden file value -->
+      <input type='hidden'  name='userid' value='<?php echo $usertblid;   ?>' >
+      <input type='hidden'  name='adminid' value='<?php echo  $adminid;  ?>' >
+      <input type='hidden' id='myid' name='fileidAndPath' />
+       <!-- <textarea name="content" id="editor1" class='editor1' contenteditable="true"> -->
+
+    <!-- </textarea> -->
+   <input type='submit' value='Save' name='save_comment' id='save_comment' style='margin-left:700px;' class='btn btn-primary' /></div></td></tr>
 </table>
 </form>
     </div>
    
     </div>
-
+    <script src="js/ckeditor.js"></script>
     <script>
+      
+  document.getElementById('editor1').addEventListener('keydown', function (e) {
+  if (e.key !== ' ') {
+    e.preventDefault(); // Prevent default for other keys if needed
+  }
+});
         ClassicEditor
-            .create( document.querySelector( '.editor' ) )
+            .create( document.querySelector( '.editor1' ) )
             .catch( error => {
                 console.error( error );
             } );
@@ -383,6 +432,28 @@ a.custom-menu-list span.icon{
 //$(".descform").hide();
   $(".desc").click(function(){
     var filid=$(this).val();
+    let filidarray = filid.split(",");
+        // Iterate over the array
+        
+    var myfileidkadai=filidarray[0];
+  
+     //window.location.assign('../users/home2.php?value='+myfileidkadai);
+    
+          // Send the value to the server using AJAX
+          $.ajax({
+                    url: "existing_decr.php", // Server-side script
+                    type: "POST",
+                    data: { inputValue: myfileidkadai },
+                    success: function (response) {
+                       // alert("Server Response: " + response);
+                       document.getElementById('ninenan').innerText = response;
+                      // $('#ninenan').val()=response;
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error: " + error);
+                    }
+              
+            });
     //alert(filid);
    //var filenamet=('.desc').find('.desc').attr('data-id',$(this).attr('data-id'));
    $("#myid").val(filid);
@@ -394,16 +465,16 @@ a.custom-menu-list span.icon{
 
 // });
 $("#save_comment").click(function(){
-  var filid=$('.editor').val();
+  var filid=$('#editorContent').val();
   
-  alert(filid);
+  //alert(filid);
   $.ajax({
 				url:'comment.php',
 				method:'POST',
 				//data:{id:$(this).attr('data-id'),name:$(this).val()},
         data: ($('[name=commentsForm]').serializeArray()),
 				success:function(data){
-          alert(data);
+          alert('Record Successfully Saves');
           $(".descform").show(); 
 					if(typeof resp != undefined){
 						resp = JSON.parse(resp);
@@ -442,13 +513,13 @@ $("#save_comment").click(function(){
 <script>
  
 // $('#Add_viewers_folder').click(function(){
-// 		uni_modal2('','add_viewers_file.php?filesid=<?php echo $myrowid ?>&folderid=<?php echo $folder_parent ?>');
+// 		uni_modal2('','add_viewers_file.php?filesid=<?php //echo $myrowid ?>&folderid=<?php //echo $folder_parent ?>');
 // 	})
 // 	$('#new_folder').click(function(){
-// 		uni_modal('','manage_folder.php?fid=<?php echo $folder_parent ?>');
+// 		uni_modal('','manage_folder.php?fid=<?php //echo $folder_parent ?>');
 // 	})
 // 	$('#new_file').click(function(){
-// 		uni_modal('','../fms_2/manage_files.php?fid=<?php echo $folder_parent ?>')
+// 		uni_modal('','../fms_2/manage_files.php?fid=<?php //echo $folder_parent ?>')
 // 	})
 // 	$('.folder-item').dblclick(function(){
 // 		location.href = 'add_document.php?page=files&fid='+$(this).attr('data-id')
@@ -465,7 +536,7 @@ $("#save_comment").click(function(){
 
 // 	$("div.custom-menu .edit").click(function(e){
 // 		e.preventDefault()
-// 		uni_modal('Rename Folder','manage_folder.php?fid=<?php echo $folder_parent ?>&id='+$(this).attr('data-id') )
+// 		uni_modal('Rename Folder','manage_folder.php?fid=<?php //echo $folder_parent ?>&id='+$(this).attr('data-id') )
 // 	})
 // 	$("div.custom-menu .delete").click(function(e){
 	
@@ -511,7 +582,7 @@ $("#save_comment").click(function(){
 // 			$.ajax({
 // 				url:'ajax.php?action=file_rename',
 // 				method:'POST',
-// 				data:{id:$(this).attr('data-id'),name:$(this).val(),type:$(this).attr('data-type'),folder_id:'<?php echo $folder_parent ?>'},
+// 				data:{id:$(this).attr('data-id'),name:$(this).val(),type:$(this).attr('data-type'),folder_id:'<?php //echo $folder_parent ?>'},
 // 				success:function(resp){
 // 					if(typeof resp != undefined){
 // 						resp = JSON.parse(resp);
@@ -607,4 +678,29 @@ $("#save_comment").click(function(){
 			}
 		})
 	}
-</script>    
+</script>  
+<script>
+  $('.openSideWindowFile').click(function(event) {
+  event.preventDefault(); // Prevent default behavior
+  //const linkText = $(this).text(); // Get text content
+  const hrefValue = $(this).attr('href'); // Get href attribute
+  //console.log(`HREF: ${hrefValue}`);
+    // Get the dimensions of the parent window
+    const parentWindowWidth = window.outerWidth;
+    const parentWindowHeight = window.outerHeight;
+    const parentWindowX = window.screenX; // X coordinate of the parent window
+    const parentWindowY = window.screenY; // Y coordinate of the parent window
+
+    // Set the size of the new window
+    const newWindowWidth = Math.floor(parentWindowWidth / 2); // Half the width of the parent
+    const newWindowHeight = parentWindowHeight;
+
+    // Open the new window on the right side of the parent window
+    window.open(
+      hrefValue, // URL to open
+      '_blank', // Target
+      `width=${newWindowWidth},height=${newWindowHeight},top=${parentWindowY},left=${parentWindowX + newWindowWidth}`
+    );
+  });
+
+</script>  

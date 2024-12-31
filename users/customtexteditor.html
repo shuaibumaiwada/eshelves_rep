@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Text Editor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .editor-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .editor-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .editor-toolbar button {
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 5px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .editor-toolbar button:hover {
+      background-color: #e0e0e0;
+      transform: scale(1.05);
+    }
+
+    .editor {
+      padding: 15px;
+      min-height: 250px;
+      font-size: 16px;
+      line-height: 1.6;
+      background: #fff;
+      white-space: pre-wrap;
+      outline: none;
+      overflow-y: auto;
+    }
+
+    .editor:focus {
+      border-left: 4px solid #0095ff;
+    }
+  </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="hidden" id="editorContentOutput"  name="editorContent">
+   <!-- Hidden input to store div content -->
+   <!-- <input type="text" name="editorContent" id="editorContent" class="editorContent" > -->
+     
+  <div class="editor-container">
+    <!-- Toolbar -->
+    <div class="editor-toolbar">
+      <button onclick="format('bold')" title="Bold" type="button"><b>B</b></button>
+      <button onclick="format('italic')" title="Italic" type="button"><i>I</i></button>
+      <button onclick="format('underline')" title="Underline" type="button"><i class="fa fa-underline"></i></button>
+      <button onclick="format('justifyLeft')" title="Align Left" type="button"><i class="fa fa-align-left" style=""></i></button>
+      <button onclick="format('justifyCenter')" title="Align Center" type="button"><i class="fa fa-align-center" style=""></i></button>
+      <button onclick="format('justifyRight')" title="Align Right" type="button"><i class="fa fa-align-right" style=""></i> </button>
+      <button onclick="format('insertUnorderedList')" title="Bullet List" type="button"><i class="fa fa-list-ul" style=""></i></button>
+      <button onclick="format('insertOrderedList')" title="Numbered List" type="button"><i class="fa fa-list-ol" style=""></i></button>
+      
+    </div>
+  
+
+    <!-- Editable Area -->
+  
+    <div class="editor" id="editableDiv" contenteditable="true" onkeyup="handleDivKeyUp()">
+      Start typing here...
+    </div>
+  </div>
+</div>
+</div>
+<script>
+    function handleDivKeyUp() {
+        // Get the content of the div
+        const value = document.getElementById('editableDiv').innerText;
+        // Update the output
+        // document.getElementById('output').innerText = value;
+        document.getElementById('editorContentOutput').value = value;
+    }
+</script>
+  <script>
+    // Function to apply formatting
+    function format(command) {
+      document.execCommand(command, false, null);
+    }
+  </script>
+</body>
+</html>

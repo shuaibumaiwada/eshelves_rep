@@ -15,6 +15,7 @@ if (isset($_POST['save'])) {
     $fileidval = $_POST['fileid'];
     $folderval = $_POST['folderid'];
     //$_SESSION['foldersession'];
+    $adminid=$_SESSION["login_id"];
 
    // $scorecolumn = $_POST['scorecolumn'];
 
@@ -132,8 +133,8 @@ if (isset($_POST['save'])) {
                     $userrow= mysqli_num_rows($checkuser);
                     if($userrow===0){
               
-                $queryupdateresult = mysqli_query($conn,"INSERT IGNORE INTO login_user ( id,   name, email_address,    user_password, user_status, file_to_view) 
-             VALUES('','$name','$adminuser','$adminpassword','$adminstatus','$folderval')");
+                $queryupdateresult = mysqli_query($conn,"INSERT IGNORE INTO login_user ( id,   name, email_address, user_password,created_by, user_status, file_to_view) 
+             VALUES('','$name','$adminuser','$adminpassword','$adminid','$adminstatus','$folderval')");
                   // $queryupdateresult = mysqli_query($conn,"INSERT IGNORE INTO admin_login( id,   name,    admin_user,    admin_password, admin_status) 
                   // VALUES('','$name','$adminuser','$adminpassword','$adminstatus')");
                  //$queryfortotaltbl = mysql_query("INSERT INTO total_tbl(rowid,coursecod,regnum,testscore,examsscore,total,sessionv,semester,staffid) 
@@ -159,8 +160,8 @@ if (isset($_POST['save'])) {
                     /////////////////
                     //echo"$matric,$total<br>"; 
              
-                   $queryupdateresult = mysqli_query($conn,"INSERT IGNORE INTO users_allocation ( id, userid, fileid, folderid, status, createdDate) 
-                   VALUES('','$uid','$file','$folderval',1, CURRENT_TIMESTAMP())");
+                   $queryupdateresult = mysqli_query($conn,"INSERT IGNORE INTO users_allocation ( id, userid, fileid, folderid,created_by, status, createdDate) 
+                   VALUES('','$uid','$file','$folderval','$adminid',1, CURRENT_TIMESTAMP())");
                         }
                     }
                           //$filetoview=$row['file_to_view'];

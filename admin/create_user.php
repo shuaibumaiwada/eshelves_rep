@@ -1,10 +1,11 @@
 <?php
+session_start();
 
  require_once("include/connection.php"); 
    
    if(isset($_POST['reguser'])){
     
-        
+	$adminid=$_SESSION["login_id"];
          $user_name = mysqli_real_escape_string($conn,$_POST['name']);
          $email_address = mysqli_real_escape_string($conn,$_POST['email_address']);
          $user_password = password_hash($_POST['user_password'], PASSWORD_DEFAULT, array('cost' => 12));  //PASSWORD_ARGON2I//PASSWORD_ARGON2ID
@@ -21,7 +22,7 @@
 				</script>
 			';
 		}else{
-			$conn->query("INSERT INTO `login_user` VALUES('','$user_name', '$email_address', '$user_password', '$user_status','0')") or die(mysqli_error());
+			$conn->query("INSERT INTO `login_user` VALUES('','$user_name', '$email_address', '$user_password','$adminid', '$user_status','0')") or die(mysqli_error());
 			echo '
 				<script type = "text/javascript">
 					alert("Saved Employee Info");window.location = "dashboard.php";

@@ -946,6 +946,12 @@ if(!isset($_SESSION["admin_user"])){
                                     <span class="sidenav-normal  ms-1  ps-1"> User Logs </span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" href="../users/">
+                                    <span class="sidenav-mini-icon"> U </span>
+                                    <span class="sidenav-normal  ms-1  ps-1"> User Login </span>
+                                </a>
+                            </li>
                         </ul>
 
                 </li>
@@ -965,7 +971,7 @@ if(!isset($_SESSION["admin_user"])){
         </div>
     </aside>
   <!--  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ps ps--active-y"> -->
-          <main class="main-content position-relative border-radius-lg ps ps--active-y">
+          <main class="main-content position-relative border-radius-lg ps ps-active-y">
         <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg position-sticky mt-2 top-1 px-0 py-1 mx-3 border-radius-lg z-index-sticky shadow-none"
             id="navbarBlur" data-scroll="true">

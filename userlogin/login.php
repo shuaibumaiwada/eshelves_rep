@@ -58,7 +58,7 @@ $query=mysqli_query($conn,"SELECT * FROM  login_user WHERE email_address = '$use
                       
                           mysqli_query($conn,"INSERT INTO history_log(id,email_address,action,ip,host,login_time) VALUES('$id','$user','$remarks','$ip','$host','$date')")or die(mysqli_error($conn));
                  
-			  	echo "<script type='text/javascript'>document.location='../private_user/home2.php'</script>";  
+			  	echo "<script type='text/javascript'>document.location='../users/home2.php'</script>";  
 		 }
 	  }
    }
